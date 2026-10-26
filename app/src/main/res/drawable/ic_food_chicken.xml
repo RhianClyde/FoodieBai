@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Bone -->
+    <path
+        android:fillColor="#F0E5D8"
+        android:pathData="M24,68 C20,72 16,72 14,68 C12,64 16,60 20,56 L34,42 L42,50 L28,64 C26,66 28,66 24,68 Z"/>
+    <path
+        android:fillColor="#F0E5D8"
+        android:pathData="M16,76 C12,74 12,68 16,66 L22,72 Z"/>
+    <!-- Meat -->
+    <path
+        android:fillColor="#A0522D"
+        android:pathData="M38,40 C32,28 42,16 58,16 C74,16 84,28 80,44 C76,60 56,60 42,50 Z"/>
+    <!-- Highlight -->
+    <path
+        android:fillColor="#CD853F"
+        android:pathData="M48,24 C56,20 68,22 72,32 C74,38 72,46 64,48 C56,50 48,42 48,24 Z"/>
+</vector>

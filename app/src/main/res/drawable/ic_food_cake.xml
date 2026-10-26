@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Strawberry on Top -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M48,16 C42,16 40,24 48,32 C56,24 54,16 48,16 Z"/>
+    <!-- Cake Base -->
+    <path
+        android:fillColor="#FFF3E0"
+        android:pathData="M20,50 L76,34 L80,70 L20,82 Z"/>
+    <!-- Layer Fillings -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M20,60 L77,46 L78,54 L20,68 Z"/>
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M20,70 L78,58 L79,64 L20,76 Z"/>
+    <!-- Cream Top -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,50 L76,34 Q80,30 48,28 Q16,30 18,50 Z"/>
+</vector>

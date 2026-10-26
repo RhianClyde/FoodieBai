@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Steak Outer -->
+    <path
+        android:fillColor="#D32F2F"
+        android:pathData="M24,32 C20,20 40,16 64,20 C82,24 86,44 76,64 C66,80 36,78 20,60 C14,48 28,40 24,32 Z"/>
+    <!-- Bone -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,44 C32,40 36,32 42,36 C48,40 42,48 36,44 Z"/>
+    <!-- Fat Ring -->
+    <path
+        android:fillColor="#FFCDD2"
+        android:pathData="M26,34 C24,24 42,20 62,24 C76,28 80,42 72,58 M24,34 C28,40 18,48 22,58"/>
+</vector>

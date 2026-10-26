@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Dark Green Location Pin Base -->
+    <path
+        android:fillColor="#0F5A3B"
+        android:pathData="M54,14 C38.53,14 26,26.53 26,42 C26,62.5 54,90 54,90 C54,90 82,62.5 82,42 C82,26.53 69.47,14 54,14 Z"/>
+
+    <!-- Motion Speed Lines (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M33,39 h5 v2 h-5 z M30,43 h7 v2 h-7 z M34,47 h4 v2 h-4 z"/>
+
+    <!-- Delivery Box on Back (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,35 h10 v10 h-10 z M42,31 h6 v4 h-6 z"/>
+
+    <!-- Driver Person Helmet (White Circle Path) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M55,30 A3.5,3.5 0 1,0 55,37 A3.5,3.5 0 1,0 55,30 Z"/>
+
+    <!-- Driver Body & Arms (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M51,39 C51,37.5 52.5,36.5 55,36.5 L57,36.5 C59,36.5 61,38 61,41 L59,47 L55,47 L55,53 L51,53 Z M59,41 L65,41 L62,45 L59,44 Z"/>
+
+    <!-- Scooter Wheels & Frame (White) -->
+    <!-- Rear Wheel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M45,51 C42.5,51 40.5,53 40.5,55.5 C40.5,58 42.5,60 45,60 C47.5,60 49.5,58 49.5,55.5 C49.5,53 47.5,51 45,51 Z M45,53.5 C46.1,53.5 47,54.4 47,55.5 C47,56.6 46.1,57.5 45,57.5 C43.9,57.5 43,56.6 43,55.5 C43,54.4 43.9,53.5 45,53.5 Z"/>
+    <!-- Front Wheel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M67.5,51 C65,51 63,53 63,55.5 C63,58 65,60 67.5,60 C70,60 72,58 72,55.5 C72,53 70,51 67.5,51 Z M67.5,53.5 C68.6,53.5 69.5,54.4 69.5,55.5 C69.5,56.6 68.6,57.5 67.5,57.5 C66.4,57.5 65.5,56.6 65.5,55.5 C65.5,54.4 66.4,53.5 67.5,53.5 Z"/>
+    <!-- Frame & Floorboard -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M45,49 L55,49 L57,53.5 L47.5,53.5 Z M56,46 L63.5,40.5 L65.5,43 L61,53.5 L56,53.5 Z"/>
+</vector>

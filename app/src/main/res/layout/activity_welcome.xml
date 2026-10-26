@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- HEADER LOGO -->
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_logo_icon">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_logo_utensils" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="FoodieBai"
+                android:textColor="@color/primary_green_dark"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- HERO CARD -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_hero"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_hero_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_header">
+
+            <!-- ORANGE/TAN PLUS BADGE TOP RIGHT -->
+            <FrameLayout
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_circle_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_plus"
+                    app:tint="#B35B2B" />
+            </FrameLayout>
+
+            <!-- CONCENTRIC CIRCLES -->
+            <!-- Outer Circle (Tan) -->
+            <View
+                android:id="@+id/v_outer_circle"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_circle_tan"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Ring 2 (White) -->
+            <View
+                android:id="@+id/v_white_ring"
+                android:layout_width="156dp"
+                android:layout_height="156dp"
+                android:background="@drawable/bg_circle_white"
+                app:layout_constraintBottom_toBottomOf="@id/v_outer_circle"
+                app:layout_constraintEnd_toEndOf="@id/v_outer_circle"
+                app:layout_constraintStart_toStartOf="@id/v_outer_circle"
+                app:layout_constraintTop_toTopOf="@id/v_outer_circle" />
+
+            <!-- Ring 3 (Green) -->
+            <View
+                android:id="@+id/v_green_ring"
+                android:layout_width="118dp"
+                android:layout_height="118dp"
+                android:background="@drawable/bg_circle_green_hero"
+                app:layout_constraintBottom_toBottomOf="@id/v_white_ring"
+                app:layout_constraintEnd_toEndOf="@id/v_white_ring"
+                app:layout_constraintStart_toStartOf="@id/v_white_ring"
+                app:layout_constraintTop_toTopOf="@id/v_white_ring" />
+
+            <!-- Center Circle (Yellow) -->
+            <View
+                android:id="@+id/v_center_yellow"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/bg_circle_yellow"
+                app:layout_constraintBottom_toBottomOf="@id/v_green_ring"
+                app:layout_constraintEnd_toEndOf="@id/v_green_ring"
+                app:layout_constraintStart_toStartOf="@id/v_green_ring"
+                app:layout_constraintTop_toTopOf="@id/v_green_ring" />
+
+            <!-- MADE FRESH BADGE OVERLAPPING BOTTOM OF CIRCLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_info_pill"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="MADE FRESH"
+                android:textColor="@color/primary_green_dark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/v_outer_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_outer_circle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- HEADLINE TEXT -->
+        <TextView
+            android:id="@+id/tv_headline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Good food,\nright to your door."
+            android:textColor="@color/text_dark"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_hero" />
+
+        <!-- SUBTITLE TEXT -->
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="Find something delicious from local favorites and enjoy a fresh meal without the fuss."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline" />
+
+        <!-- INFO PILL -->
+        <LinearLayout
+            android:id="@+id/ll_info_pill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_info_pill"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fresh"
+                    android:textColor="@color/primary_green_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="made to order"
+                    android:textColor="@color/text_muted"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Local"
+                    android:textColor="@color/primary_green_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="nearby favorites"
+                    android:textColor="@color/text_muted"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Easy"
+                    android:textColor="@color/primary_green_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="simple checkout"
+                    android:textColor="@color/text_muted"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- GET STARTED BUTTON -->
+        <Button
+            android:id="@+id/btn_get_started"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/primary_green"
+            android:text="Get started"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_info_pill" />
+
+        <!-- LOGIN BUTTON -->
+        <Button
+            android:id="@+id/btn_already_account"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/white"
+            android:text="I already have an account"
+            android:textColor="@color/primary_green_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_get_started"
+            app:strokeColor="@color/border_light" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

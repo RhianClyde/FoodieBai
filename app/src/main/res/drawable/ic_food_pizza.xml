@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Crust -->
+    <path
+        android:fillColor="#E89E4B"
+        android:pathData="M20,30 Q48,10 76,30 L70,38 Q48,22 26,38 Z"/>
+    <!-- Cheese Base -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M26,38 Q48,22 70,38 L48,84 Z"/>
+    <!-- Pepperoni Spots -->
+    <path
+        android:fillColor="#D32F2F"
+        android:pathData="M48,37 A5,5 0 1,0 48,47 A5,5 0 1,0 48,37 Z M38,49 A5,5 0 1,0 38,59 A5,5 0 1,0 38,49 Z M56,51 A5,5 0 1,0 56,61 A5,5 0 1,0 56,51 Z M46,64 A4,4 0 1,0 46,72 A4,4 0 1,0 46,64 Z"/>
+</vector>
