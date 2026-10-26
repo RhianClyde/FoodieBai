@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.foodorderingsystem.R
 import com.example.foodorderingsystem.WelcomeActivity
+import com.example.foodorderingsystem.data.CartManager
+import com.example.foodorderingsystem.data.FoodRepository
 import com.example.foodorderingsystem.data.UserManager
 
 class ProfileFragment : Fragment() {
@@ -26,6 +28,8 @@ class ProfileFragment : Fragment() {
         val tvAddress = view.findViewById<TextView>(R.id.tv_address)
         val tvPhone = view.findViewById<TextView>(R.id.tv_phone)
         val tvProfileAvatar = view.findViewById<TextView>(R.id.tv_profile_avatar)
+        val tvStatOrders = view.findViewById<TextView>(R.id.tv_stat_orders)
+        val tvStatFavorites = view.findViewById<TextView>(R.id.tv_stat_favorites)
         val btnLogout = view.findViewById<Button>(R.id.btn_logout)
 
         val user = UserManager.currentUser
@@ -36,6 +40,9 @@ class ProfileFragment : Fragment() {
             tvPhone.text = user.phone
             tvProfileAvatar.text = user.username.firstOrNull()?.toString()?.uppercase() ?: "F"
         }
+
+        tvStatOrders.text = CartManager.getOrders().size.toString()
+        tvStatFavorites.text = FoodRepository.getFavoriteFoods().size.toString()
 
         btnLogout.setOnClickListener {
             UserManager.logout()

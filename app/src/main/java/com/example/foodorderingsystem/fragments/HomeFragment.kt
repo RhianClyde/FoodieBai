@@ -55,6 +55,7 @@ class HomeFragment : Fragment() {
     private fun setupRecyclerView() {
         adapter = FoodAdapter(FoodRepository.getAllFoods()) { foodItem ->
             Toast.makeText(context, "Added ${foodItem.title} to cart!", Toast.LENGTH_SHORT).show()
+            (activity as? MainActivity)?.updateCartBadge()
         }
         rvFoodList.layoutManager = GridLayoutManager(context, 2)
         rvFoodList.adapter = adapter
@@ -126,5 +127,6 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         updateList()
+        (activity as? MainActivity)?.updateCartBadge()
     }
 }

@@ -1,9 +1,11 @@
 package com.example.foodorderingsystem.fragments
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -49,8 +51,7 @@ class CartFragment : Fragment() {
         btnCheckout.setOnClickListener {
             val order = CartManager.placeOrder()
             if (order != null) {
-                Toast.makeText(context, "Order placed successfully!", Toast.LENGTH_LONG).show()
-                (activity as? MainActivity)?.selectBottomTab(R.id.nav_orders)
+                showOrderSuccessDialog(order.orderId, order.totalPrice)
             } else {
                 Toast.makeText(context, "Your cart is empty!", Toast.LENGTH_SHORT).show()
             }
@@ -59,6 +60,34 @@ class CartFragment : Fragment() {
         updateCartUI()
 
         return view
+    }
+
+    private fun showOrderSuccessDialog(orderId: String, totalPrice: Int) {
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_order_success)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        val tvOrderRef = dialog.findViewById<TextView>(R.id.tv_order_ref)
+        val tvOrderAmount = dialog.findViewById<TextView>(R.id.tv_order_amount)
+        val btnTrackOrder = dialog.findViewById<Button>(R.id.btn_track_order)
+        val btnContinueShopping = dialog.findViewById<Button>(R.id.btn_continue_shopping)
+
+        tvOrderRef.text = orderId
+        tvOrderAmount.text = "₱$totalPrice"
+
+        btnTrackOrder.setOnClickListener {
+            dialog.dismiss()
+            (activity as? MainActivity)?.selectBottomTab(R.id.nav_orders)
+        }
+
+        btnContinueShopping.setOnClickListener {
+            dialog.dismiss()
+            (activity as? MainActivity)?.selectBottomTab(R.id.nav_home)
+        }
+
+        dialog.show()
+        updateCartUI()
     }
 
     private fun updateCartUI() {
@@ -78,6 +107,7 @@ class CartFragment : Fragment() {
             tvDeliveryFee.text = "₱${CartManager.deliveryFee}"
             tvTotalPrice.text = "₱${CartManager.getTotalPrice()}"
         }
+        (activity as? MainActivity)?.updateCartBadge()
     }
 
     override fun onResume() {

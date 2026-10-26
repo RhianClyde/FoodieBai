@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.foodorderingsystem.MainActivity
 import com.example.foodorderingsystem.R
 import com.example.foodorderingsystem.adapters.FoodAdapter
 import com.example.foodorderingsystem.data.FoodRepository
@@ -32,6 +33,7 @@ class MenuFragment : Fragment() {
 
         adapter = FoodAdapter(FoodRepository.getAllFoods()) { foodItem ->
             Toast.makeText(context, "Added ${foodItem.title} to cart!", Toast.LENGTH_SHORT).show()
+            (activity as? MainActivity)?.updateCartBadge()
         }
         rvMenu.layoutManager = GridLayoutManager(context, 2)
         rvMenu.adapter = adapter
@@ -51,5 +53,6 @@ class MenuFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         adapter.updateData(FoodRepository.getAllFoods())
+        (activity as? MainActivity)?.updateCartBadge()
     }
 }

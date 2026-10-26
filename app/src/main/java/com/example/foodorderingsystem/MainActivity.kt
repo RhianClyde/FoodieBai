@@ -3,7 +3,9 @@ package com.example.foodorderingsystem
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.foodorderingsystem.data.CartManager
 import com.example.foodorderingsystem.fragments.CartFragment
 import com.example.foodorderingsystem.fragments.HomeFragment
 import com.example.foodorderingsystem.fragments.MenuFragment
@@ -43,6 +45,8 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        updateCartBadge()
     }
 
     private fun loadFragment(fragment: Fragment): Boolean {
@@ -54,5 +58,17 @@ class MainActivity : AppCompatActivity() {
 
     fun selectBottomTab(itemId: Int) {
         bottomNav.selectedItemId = itemId
+    }
+
+    fun updateCartBadge() {
+        val cartCount = CartManager.getCartCount()
+        val badge = bottomNav.getOrCreateBadge(R.id.nav_cart)
+        if (cartCount > 0) {
+            badge.isVisible = true
+            badge.number = cartCount
+            badge.backgroundColor = ContextCompat.getColor(this, R.color.primary_green)
+        } else {
+            badge.isVisible = false
+        }
     }
 }
