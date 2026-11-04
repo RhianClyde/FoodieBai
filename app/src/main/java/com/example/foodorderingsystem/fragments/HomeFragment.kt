@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var adapter: FoodAdapter
 
     private var selectedCategory = "All"
-    private val categories = listOf("All", "Burger", "Milk Tea", "Chicken", "Pizza", "Steak", "Cake")
+    private val categories = listOf("All", "Jollibee", "McDonald's", "KFC", "Chowking", "Mang Inasal", "Starbucks")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
