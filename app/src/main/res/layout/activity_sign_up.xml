@@ -128,6 +128,18 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tv_username_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:textColor="#D93838"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_username" />
+
             <!-- EMAIL INPUT -->
             <LinearLayout
                 android:id="@+id/ll_email"
@@ -140,7 +152,7 @@
                 android:paddingHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_username">
+                app:layout_constraintTop_toBottomOf="@id/tv_username_error">
 
                 <ImageView
                     android:layout_width="22dp"
@@ -160,6 +172,18 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tv_email_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:textColor="#D93838"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_email" />
+
             <!-- PASSWORD INPUT WITH GREEN CIRCLE EYE BUTTON -->
             <LinearLayout
                 android:id="@+id/ll_password"
@@ -173,7 +197,7 @@
                 android:paddingEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_email">
+                app:layout_constraintTop_toBottomOf="@id/tv_email_error">
 
                 <ImageView
                     android:layout_width="22dp"
@@ -227,7 +251,7 @@
 
             <!-- SIGN IN LINK -->
             <TextView
-                android:id="@+id/tv_sign_in_link"
+                android:id="@+id/tv_sign_up_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

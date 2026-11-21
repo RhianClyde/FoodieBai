@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
 
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_welcome)
+
+        FirebaseApp.initializeApp(this)
 
         val btnGetStarted = findViewById<Button>(R.id.btn_get_started)
         val btnAlreadyAccount = findViewById<Button>(R.id.btn_already_account)

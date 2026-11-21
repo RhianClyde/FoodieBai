@@ -19,6 +19,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.foodorderingsystem.data.UserManager
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignInActivity : AppCompatActivity() {
 
@@ -36,7 +37,6 @@ class SignInActivity : AppCompatActivity() {
         val btnSignIn = findViewById<Button>(R.id.btn_sign_in)
         val tvSignUpLink = findViewById<TextView>(R.id.tv_sign_up_link)
 
-        // Format link text: "New to FoodieBai? Create an account"
         val linkText = "New to FoodieBai? Create an account"
         val spannable = SpannableString(linkText)
         val startIdx = linkText.indexOf("Create an account")
@@ -49,16 +49,14 @@ class SignInActivity : AppCompatActivity() {
         }
         tvSignUpLink.text = spannable
 
-        btnBack.setOnClickListener {
-            finish()
-        }
+        btnBack.setOnClickListener { finish() }
 
         btnTogglePassword.setOnClickListener {
             isPasswordVisible = !isPasswordVisible
-            if (isPasswordVisible) {
-                etPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            etPassword.transformationMethod = if (isPasswordVisible) {
+                HideReturnsTransformationMethod.getInstance()
             } else {
-                etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                PasswordTransformationMethod.getInstance()
             }
             etPassword.setSelection(etPassword.text.length)
         }
@@ -68,7 +66,7 @@ class SignInActivity : AppCompatActivity() {
             val password = etPassword.text.toString().trim()
 
             if (identifier.isEmpty()) {
-                etIdentifier.error = "Please enter email or username"
+                etIdentifier.error = "Please enter your Email or username"
                 return@setOnClickListener
             }
             if (password.isEmpty()) {
@@ -76,13 +74,47 @@ class SignInActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            UserManager.login(identifier, "")
-            Toast.makeText(this, "Welcome back, $identifier!", Toast.LENGTH_SHORT).show()
+            btnSignIn.isEnabled = false
+            val db = FirebaseFirestore.getInstance()
 
-            val intent = Intent(this, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
+            // First check if identifier matches an email in Firestore
+            db.collection("users")
+                .whereEqualTo("email", identifier)
+                .whereEqualTo("password", password)
+                .get()
+                .addOnSuccessListener { emailDocs ->
+                    if (!emailDocs.isEmpty) {
+                        val doc = emailDocs.documents[0]
+                        val displayName = doc.getString("username") ?: identifier
+                        val userEmail = doc.getString("email") ?: ""
+                        completeLogin(displayName, userEmail)
+                    } else {
+                        // If no email matched, check if identifier matches a username
+                        db.collection("users")
+                            .whereEqualTo("username", identifier)
+                            .whereEqualTo("password", password)
+                            .get()
+                            .addOnSuccessListener { usernameDocs ->
+                                if (!usernameDocs.isEmpty) {
+                                    val doc = usernameDocs.documents[0]
+                                    val displayName = doc.getString("username") ?: identifier
+                                    val userEmail = doc.getString("email") ?: ""
+                                    completeLogin(displayName, userEmail)
+                                } else {
+                                    btnSignIn.isEnabled = true
+                                    Toast.makeText(this@SignInActivity, "Invalid email/username or password", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .addOnFailureListener { e ->
+                                btnSignIn.isEnabled = true
+                                Toast.makeText(this@SignInActivity, "Firestore error: ${e.message}", Toast.LENGTH_LONG).show()
+                            }
+                    }
+                }
+                .addOnFailureListener { e ->
+                    btnSignIn.isEnabled = true
+                    Toast.makeText(this@SignInActivity, "Firestore error: ${e.message}", Toast.LENGTH_LONG).show()
+                }
         }
 
         tvSignUpLink.setOnClickListener {
@@ -90,5 +122,15 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun completeLogin(displayName: String, email: String) {
+        UserManager.login(displayName, email)
+        Toast.makeText(this@SignInActivity, "Welcome back, $displayName!", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this@SignInActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
