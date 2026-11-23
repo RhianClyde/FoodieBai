@@ -54,17 +54,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_back">
 
-            <!-- "F" BADGE -->
-            <TextView
+            <!-- FOODIEBAI LOGO BADGE -->
+            <ImageView
                 android:id="@+id/badge_f"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:background="@drawable/bg_badge_green"
-                android:gravity="center"
-                android:text="F"
-                android:textColor="@color/primary_green_dark"
-                android:textSize="28sp"
-                android:textStyle="bold"
+                android:src="@drawable/ic_scooter_pin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -89,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Sign in to pick up where you left off."
+                android:text="Sign in to order your favorite meals!"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -218,7 +213,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="16dp"
             android:letterSpacing="0.15"
-            android:text="GOOD FOOD, GOOD MOOD"
+            android:text="DELIVERING JOY TO YOUR DOOR"
             android:textColor="@color/primary_green"
             android:textSize="12sp"
             android:textStyle="bold"

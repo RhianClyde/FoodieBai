@@ -39,12 +39,13 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
 
-    // Retrofit & Gson for MySQL Backend REST API connection
+    // Retrofit & Gson for REST API connection
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
-    // Firebase BoM & Cloud Firestore
+    // Firebase BoM, Authentication & Cloud Firestore
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
 
     testImplementation(libs.junit)

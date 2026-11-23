@@ -1,6 +1,8 @@
 package com.example.foodorderingsystem.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,9 @@ class OrdersFragment : Fragment() {
     private lateinit var rvOrders: RecyclerView
     private lateinit var tvEmptyOrders: TextView
     private lateinit var adapter: OrdersAdapter
+
+    private val handler = Handler(Looper.getMainLooper())
+    private var refreshRunnable: Runnable? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,8 +53,28 @@ class OrdersFragment : Fragment() {
         }
     }
 
+    private fun startLiveRefresh() {
+        refreshRunnable = object : Runnable {
+            override fun run() {
+                updateOrdersList()
+                handler.postDelayed(this, 2000) // Refresh UI every 2 seconds
+            }
+        }
+        handler.post(refreshRunnable!!)
+    }
+
+    private fun stopLiveRefresh() {
+        refreshRunnable?.let { handler.removeCallbacks(it) }
+    }
+
     override fun onResume() {
         super.onResume()
         updateOrdersList()
+        startLiveRefresh()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        stopLiveRefresh()
     }
 }

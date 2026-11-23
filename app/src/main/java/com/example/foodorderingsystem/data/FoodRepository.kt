@@ -7,7 +7,7 @@ object FoodRepository {
     private val foodItemsList = mutableListOf(
         FoodItem(
             id = "1",
-                title = "8 - pc. Chickenjoy Solo",
+                  title = "8 - pc. Chickenjoy Solo",
             category = "Jollibee",
             description = "Eight pieces of crispy, juicy, flavorful, golden-fried Chickenjoy.",
             price = 748,
