@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UI UPDATE: Ripple for circular green buttons (add to cart, password toggle) -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#330F5A3B">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#0F5A3B" />
+        </shape>
+    </item>
+</ripple>

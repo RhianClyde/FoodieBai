@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- UI UPDATE v2: Refined warm peach gradient with subtle inner stroke -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:angle="135"
-        android:endColor="#FAF3EB"
-        android:startColor="#FDF7ED" />
+        android:startColor="#FFF8F0"
+        android:endColor="#F9ECE0" />
     <corners android:radius="24dp" />
+    <stroke
+        android:width="1dp"
+        android:color="#F0DFD0" />
 </shape>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- BASE BRAND COLORS -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#0F5A3B</color>
@@ -16,4 +17,28 @@
     <color name="heart_red">#D93838</color>
     <color name="accent_peach">#F7EDE2</color>
     <color name="border_light">#E2E8E4</color>
+
+    <!-- UI UPDATE v2: Expanded semantic color palette for premium v2 styling -->
+    <color name="card_surface">#FFFFFF</color>
+    <color name="card_surface_elevated">#FAFCFB</color>
+    <color name="shadow_soft">#0D000000</color>
+    <color name="ripple_green">#1A0F5A3B</color>
+    <color name="ripple_dark">#12000000</color>
+    <color name="input_bg">#F6F8F7</color>
+    <color name="input_bg_focused">#EDF5F0</color>
+    <color name="divider">#ECF0ED</color>
+    <color name="bottom_nav_active">#0F5A3B</color>
+    <color name="bottom_nav_inactive">#9BA8A0</color>
+    <color name="badge_green_soft">#D6EBE0</color>
+    <color name="logout_red">#D93838</color>
+    <color name="logout_red_pressed">#C02E2E</color>
+
+    <!-- UI UPDATE v2: Added status and accent colors -->
+    <color name="status_pending_bg">#FFF3E0</color>
+    <color name="status_pending_text">#E67E22</color>
+    <color name="status_preparing_bg">#D6EBE0</color>
+    <color name="status_preparing_text">#0F5A3B</color>
+    <color name="accent_gold">#F59E0B</color>
+    <color name="header_gradient_start">#0B4A30</color>
+    <color name="header_gradient_end">#073522</color>
 </resources>

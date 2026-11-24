@@ -13,6 +13,7 @@ import android.text.style.UnderlineSpan
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -31,11 +32,21 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_in)
 
         val btnBack = findViewById<View>(R.id.btn_back)
+        val llIdentifier = findViewById<LinearLayout>(R.id.ll_identifier)
         val etIdentifier = findViewById<EditText>(R.id.et_identifier)
+        val llPassword = findViewById<LinearLayout>(R.id.ll_password)
         val etPassword = findViewById<EditText>(R.id.et_password)
         val btnTogglePassword = findViewById<View>(R.id.btn_toggle_password)
         val btnSignIn = findViewById<Button>(R.id.btn_sign_in)
         val tvSignUpLink = findViewById<TextView>(R.id.tv_sign_up_link)
+
+        // UI UPDATE v2: Focus change background highlights
+        etIdentifier.setOnFocusChangeListener { _, hasFocus ->
+            llIdentifier.setBackgroundResource(if (hasFocus) R.drawable.bg_input_field_focused else R.drawable.bg_input_field)
+        }
+        etPassword.setOnFocusChangeListener { _, hasFocus ->
+            llPassword.setBackgroundResource(if (hasFocus) R.drawable.bg_input_field_focused else R.drawable.bg_input_field)
+        }
 
         val linkText = "New to FoodieBai? Create an account"
         val spannable = SpannableString(linkText)

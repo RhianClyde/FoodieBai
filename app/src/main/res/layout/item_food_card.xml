@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- UI UPDATE v2: Card depth elevation and refined spacing for food items -->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="2dp"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="4dp"
     app:cardBackgroundColor="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,12 +25,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <!-- RATING BADGE TOP LEFT -->
+            <!-- UI UPDATE v2: Glassmorphism rating badge styling with subtle elevation -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|start"
                 android:layout_margin="12dp"
                 android:background="@drawable/bg_rating_badge"
+                android:elevation="3dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
@@ -52,16 +55,18 @@
             </LinearLayout>
 
             <!-- FAVORITE HEART TOP RIGHT -->
+            <!-- UI UPDATE v2: Favorite button elevation and ripple feedback -->
             <ImageView
                 android:id="@+id/btn_favorite"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="top|end"
                 android:layout_margin="12dp"
-                android:background="@drawable/bg_circle_white"
+                android:background="@drawable/ripple_circle_white"
                 android:clickable="true"
+                android:elevation="3dp"
                 android:focusable="true"
-                android:padding="8dp"
+                android:padding="9dp"
                 android:src="@drawable/ic_heart_outline" />
 
             <!-- FOOD ILLUSTRATION -->
@@ -74,12 +79,13 @@
         </FrameLayout>
 
         <!-- FOOD TITLE -->
+        <!-- UI UPDATE v2: Bold title typography -->
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="14dp"
             android:layout_marginEnd="14dp"
             android:ellipsize="end"
             android:maxLines="2"
@@ -107,6 +113,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
         <!-- DESCRIPTION -->
+        <!-- UI UPDATE v2: Line spacing for readability -->
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="0dp"
@@ -115,6 +122,7 @@
             android:layout_marginTop="6dp"
             android:layout_marginEnd="14dp"
             android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
             android:maxLines="2"
             android:text="Crispy chicken tossed in sweet, spicy Korean glaze."
             android:textColor="@color/text_secondary"
@@ -129,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="14dp"
             android:letterSpacing="0.05"
             android:text="FROM"
             android:textColor="@color/text_muted"
@@ -139,6 +147,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
         <!-- PRICE -->
+        <!-- UI UPDATE v2: Bold price font scale -->
         <TextView
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
@@ -153,15 +162,17 @@
             app:layout_constraintTop_toBottomOf="@id/tv_from_label" />
 
         <!-- ADD TO CART BUTTON -->
+        <!-- UI UPDATE v2: Elevated circle add button with ripple effect -->
         <ImageView
             android:id="@+id/btn_add_to_cart"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_marginEnd="14dp"
-            android:background="@drawable/bg_circle_green"
+            android:background="@drawable/ripple_circle_green"
             android:clickable="true"
+            android:elevation="4dp"
             android:focusable="true"
-            android:padding="9dp"
+            android:padding="10dp"
             android:src="@drawable/ic_plus"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

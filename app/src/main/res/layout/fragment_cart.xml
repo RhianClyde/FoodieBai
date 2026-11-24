@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- UI UPDATE v2: Refined CartFragment screen with card summary bottom sheet feel -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_screen">
 
+    <!-- HEADER -->
+    <!-- UI UPDATE v2: Spacing and title scale -->
     <TextView
         android:id="@+id/tv_cart_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="28dp"
         android:text="Your Order Cart"
         android:textColor="@color/text_dark"
         android:textSize="26sp"
@@ -18,12 +21,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- EMPTY CART STATE -->
+    <!-- UI UPDATE v2: Friendly empty state callout with emoji and line spacing -->
     <TextView
         android:id="@+id/tv_empty_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Your cart is empty.\nExplore the menu and add something delicious!"
+        android:lineSpacingExtra="5dp"
+        android:text="🛒\n\nYour cart is empty.\nExplore the menu and add something delicious!"
         android:textColor="@color/text_muted"
         android:textSize="15sp"
         android:visibility="gone"
@@ -45,12 +51,14 @@
         app:layout_constraintTop_toBottomOf="@id/tv_cart_title" />
 
     <!-- SUMMARY CARD -->
+    <!-- UI UPDATE v2: Bottom-sheet card container with elevated shadow -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_summary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
-        app:cardElevation="8dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -59,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="22dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,7 +95,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -108,11 +116,12 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!-- UI UPDATE v2: Divider line -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginVertical="12dp"
-                android:background="@color/border_light" />
+                android:layout_marginVertical="14dp"
+                android:background="@color/divider" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -134,16 +143,20 @@
                     android:layout_height="wrap_content"
                     android:text="₱0"
                     android:textColor="@color/primary_green_dark"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!-- CHECKOUT BUTTON -->
+            <!-- UI UPDATE v2: Primary floating action button -->
             <Button
                 android:id="@+id/btn_checkout"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="18dp"
                 android:backgroundTint="@color/primary_green"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
                 android:text="Place Order"
                 android:textColor="@color/white"
                 android:textSize="16sp"

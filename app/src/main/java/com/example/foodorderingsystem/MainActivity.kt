@@ -50,7 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadFragment(fragment: Fragment): Boolean {
+        // UI UPDATE v2: Smooth fragment transition animations
         supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.fade_in_fast, R.anim.fade_out_fast)
             .replace(R.id.fragment_container, fragment)
             .commit()
         return true

@@ -49,14 +49,22 @@ class FoodAdapter(
         // Favorite icon state
         updateFavoriteIcon(holder.btnFavorite, item.isFavorite)
 
+        // UI UPDATE v2: Heart bounce micro-interaction on toggle
         holder.btnFavorite.setOnClickListener {
-            val isFav = FoodRepository.toggleFavorite(item.id)
-            updateFavoriteIcon(holder.btnFavorite, isFav)
+            holder.btnFavorite.animate().scaleX(1.3f).scaleY(1.3f).setDuration(120).withEndAction {
+                val isFav = FoodRepository.toggleFavorite(item.id)
+                updateFavoriteIcon(holder.btnFavorite, isFav)
+                holder.btnFavorite.animate().scaleX(1.0f).scaleY(1.0f).setDuration(120).start()
+            }.start()
         }
 
+        // UI UPDATE v2: Add to cart button scale micro-interaction
         holder.btnAddToCart.setOnClickListener {
-            CartManager.addToCart(item)
-            onAddToCartClick?.invoke(item)
+            holder.btnAddToCart.animate().scaleX(0.85f).scaleY(0.85f).setDuration(90).withEndAction {
+                holder.btnAddToCart.animate().scaleX(1.0f).scaleY(1.0f).setDuration(90).start()
+                CartManager.addToCart(item)
+                onAddToCartClick?.invoke(item)
+            }.start()
         }
     }
 

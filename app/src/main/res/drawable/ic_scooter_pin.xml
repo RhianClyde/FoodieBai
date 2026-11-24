@@ -1,45 +1,51 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
 
-    <!-- Dark Green Location Pin Base -->
+    <!-- Official Green Location Pin Base -->
     <path
-        android:fillColor="#0F5A3B"
-        android:pathData="M54,10 C36.33,10 22,24.33 22,42 C22,64 54,94 54,94 C54,94 86,64 86,42 C86,24.33 71.67,10 54,10 Z"/>
+        android:fillColor="#0A5B3B"
+        android:pathData="M60,10 C40.12,10 24,26.12 24,46 C24,70.5 60,108 60,108 C60,108 96,70.5 96,46 C96,26.12 79.88,10 60,10 Z"/>
 
-    <!-- Motion Speed Lines (White) -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M30,39 h6 v2 h-6 z M27,43 h8 v2 h-8 z M31,47 h5 v2 h-5 z"/>
-
-    <!-- Delivery Box on Back (White) -->
+    <!-- Speed Motion Lines (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M38,34 h12 v12 h-12 z M41,30 h6 v4 h-6 z"/>
+        android:pathData="M33,43 h7 v2 h-7 z M29,48 h9 v2 h-9 z M34,53 h6 v2 h-6 z"/>
 
-    <!-- Driver Person Helmet (White Circle Path) -->
+    <!-- Delivery Box on Scooter (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M55,29 A4,4 0 1,0 55,37 A4,4 0 1,0 55,29 Z"/>
+        android:pathData="M41,37 h14 v14 h-14 z M45,32 h6 v5 h-6 z"/>
+
+    <!-- Driver Person Helmet (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M61,32 A4.5,4.5 0 1,0 61,41 A4.5,4.5 0 1,0 61,32 Z"/>
 
     <!-- Driver Body & Arms (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M51,39 C51,37 53,36 56,36 L58,36 C60,36 62,38 62,41 L60,47 L55,47 L55,54 L51,54 Z M60,41 L66,41 L63,45 L60,44 Z"/>
+        android:pathData="M56,43 C56,41 58,40 61,40 L64,40 C66,40 68,42 68,45 L66,52 L60,52 L60,60 L56,60 Z M66,45 L73,45 L70,50 L66,49 Z"/>
 
-    <!-- Scooter Wheels & Frame (White) -->
-    <!-- Rear Wheel -->
+    <!-- Rear Wheel (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M44,51 C41.24,51 39,53.24 39,56 C39,58.76 41.24,61 44,61 C46.76,61 49,58.76 49,56 C49,53.24 46.76,51 44,51 Z M44,54 C45.1,54 46,54.9 46,56 C46,57.1 45.1,58 44,58 C42.9,58 42,57.1 42,56 C42,54.9 42.9,54 44,54 Z"/>
-    <!-- Front Wheel -->
+        android:pathData="M49,57 C45.69,57 43,59.69 43,63 C43,66.31 45.69,69 49,69 C52.31,69 55,66.31 55,63 C55,59.69 52.31,57 49,57 Z M49,60 C50.66,60 52,61.34 52,63 C52,64.66 50.66,66 49,66 C47.34,66 46,64.66 46,63 C46,61.34 47.34,60 49,60 Z"/>
+
+    <!-- Front Wheel (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M69,51 C66.24,51 64,53.24 64,56 C64,58.76 66.24,61 69,61 C71.76,61 74,58.76 74,56 C74,53.24 71.76,51 69,51 Z M69,54 C70.1,54 71,54.9 71,56 C71,57.1 70.1,58 69,58 C67.9,58 67,57.1 67,56 C67,54.9 67.9,54 69,54 Z"/>
-    <!-- Frame & Floorboard -->
+        android:pathData="M77,57 C73.69,57 71,59.69 71,63 C71,66.31 73.69,69 77,69 C80.31,69 83,66.31 83,63 C83,59.69 80.31,57 77,57 Z M77,60 C78.66,60 80,61.34 80,63 C80,64.66 78.66,66 77,66 C75.34,66 74,64.66 74,63 C74,61.34 75.34,60 77,60 Z"/>
+
+    <!-- Scooter Floorboard & Front Shield (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M44,49 L56,49 L58,54 L47,54 Z M57,46 L65,40 L67,43 L62,54 L57,54 Z"/>
+        android:pathData="M49,55 L63,55 L65,61 L52,61 Z M64,52 L73,45 L75,48 L70,61 L64,61 Z"/>
+
+    <!-- Shadow under wheels -->
+    <path
+        android:fillColor="#063E27"
+        android:pathData="M41,68 Q63,73 85,68 Q63,70 41,68 Z"/>
 </vector>

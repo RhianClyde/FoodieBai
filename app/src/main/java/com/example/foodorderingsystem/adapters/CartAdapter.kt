@@ -40,16 +40,24 @@ class CartAdapter(
         holder.tvTotalPrice.text = "₱${food.price * cartItem.quantity}"
         holder.tvQuantity.text = cartItem.quantity.toString()
 
+        // UI UPDATE v2: Plus button tactile scale animation
         holder.btnPlus.setOnClickListener {
-            CartManager.updateQuantity(food, cartItem.quantity + 1)
-            updateData(CartManager.getCartItems())
-            onItemChanged()
+            holder.btnPlus.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80).withEndAction {
+                holder.btnPlus.animate().scaleX(1.0f).scaleY(1.0f).setDuration(80).start()
+                CartManager.updateQuantity(food, cartItem.quantity + 1)
+                updateData(CartManager.getCartItems())
+                onItemChanged()
+            }.start()
         }
 
+        // UI UPDATE v2: Minus button tactile scale animation
         holder.btnMinus.setOnClickListener {
-            CartManager.updateQuantity(food, cartItem.quantity - 1)
-            updateData(CartManager.getCartItems())
-            onItemChanged()
+            holder.btnMinus.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80).withEndAction {
+                holder.btnMinus.animate().scaleX(1.0f).scaleY(1.0f).setDuration(80).start()
+                CartManager.updateQuantity(food, cartItem.quantity - 1)
+                updateData(CartManager.getCartItems())
+                onItemChanged()
+            }.start()
         }
     }
 

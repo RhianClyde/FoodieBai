@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodorderingsystem.R
 import com.example.foodorderingsystem.model.Order
@@ -32,6 +33,16 @@ class OrdersAdapter(
         holder.tvStatus.text = order.status
         holder.tvTime.text = order.orderTime
         holder.tvTotalPrice.text = "₱${order.totalPrice}"
+
+        // UI UPDATE v2: Dynamic status pill styling (Pending vs Preparing/Completed)
+        val context = holder.itemView.context
+        if (order.status.equals("Pending", ignoreCase = true)) {
+            holder.tvStatus.setBackgroundResource(R.drawable.bg_status_pending)
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.status_pending_text))
+        } else {
+            holder.tvStatus.setBackgroundResource(R.drawable.bg_status_preparing)
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.status_preparing_text))
+        }
 
         val summary = order.items.joinToString(", ") { "${it.quantity}x ${it.foodItem.title}" }
         holder.tvItemsSummary.text = summary

@@ -9,14 +9,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="24dp">
 
         <!-- HEADER LOGO -->
         <LinearLayout
             android:id="@+id/ll_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,23 +28,27 @@
                 android:layout_height="48dp"
                 android:src="@drawable/ic_scooter_pin" />
 
+            <!-- UI UPDATE: Slightly larger logo text with letter spacing -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
+                android:letterSpacing="0.02"
                 android:text="FoodieBai"
                 android:textColor="@color/primary_green_dark"
-                android:textSize="28sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <!-- HERO CARD -->
+        <!-- UI UPDATE: Added elevation for subtle card lift -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/card_hero"
             android:layout_width="0dp"
             android:layout_height="270dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/bg_hero_card"
+            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_header">
@@ -95,13 +99,15 @@
                 app:layout_constraintTop_toTopOf="@id/v_green_ring" />
 
             <!-- MADE FRESH BADGE OVERLAPPING BOTTOM OF CIRCLE -->
+            <!-- UI UPDATE: Slightly more elevation for float effect -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:background="@drawable/bg_info_pill"
-                android:elevation="4dp"
+                android:elevation="6dp"
                 android:gravity="center"
-                android:paddingHorizontal="20dp"
+                android:letterSpacing="0.08"
+                android:paddingHorizontal="22dp"
                 android:text="MADE FRESH"
                 android:textColor="@color/primary_green_dark"
                 android:textSize="12sp"
@@ -114,12 +120,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- HEADLINE TEXT -->
+        <!-- UI UPDATE: Increased line spacing for breathing room -->
         <TextView
             android:id="@+id/tv_headline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:gravity="center"
+            android:lineSpacingExtra="4dp"
             android:text="Delicious meals,\ndelivered fast!"
             android:textColor="@color/text_dark"
             android:textSize="28sp"
@@ -129,30 +137,34 @@
             app:layout_constraintTop_toBottomOf="@id/card_hero" />
 
         <!-- SUBTITLE TEXT -->
+        <!-- UI UPDATE: Slightly larger for readability -->
         <TextView
             android:id="@+id/tv_subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="8dp"
             android:gravity="center"
-            android:lineSpacingExtra="4dp"
+            android:lineSpacingExtra="5dp"
             android:text="Satisfy your cravings from your favorite local spots in just a few taps!"
             android:textColor="@color/text_secondary"
-            android:textSize="14sp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_headline" />
 
         <!-- INFO PILL -->
+        <!-- UI UPDATE: Added subtle elevation and increased vertical padding -->
         <LinearLayout
             android:id="@+id/ll_info_pill"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/bg_info_pill"
+            android:elevation="2dp"
             android:orientation="horizontal"
             android:paddingHorizontal="8dp"
-            android:paddingVertical="16dp"
+            android:paddingVertical="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
@@ -169,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:text="Fresh"
                     android:textColor="@color/primary_green_dark"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -178,7 +190,7 @@
                     android:layout_marginTop="4dp"
                     android:text="made to order"
                     android:textColor="@color/text_muted"
-                    android:textSize="11sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -193,7 +205,7 @@
                     android:layout_height="wrap_content"
                     android:text="Local"
                     android:textColor="@color/primary_green_dark"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -202,7 +214,7 @@
                     android:layout_marginTop="4dp"
                     android:text="nearby favorites"
                     android:textColor="@color/text_muted"
-                    android:textSize="11sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -217,7 +229,7 @@
                     android:layout_height="wrap_content"
                     android:text="Easy"
                     android:textColor="@color/primary_green_dark"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -226,17 +238,20 @@
                     android:layout_marginTop="4dp"
                     android:text="simple checkout"
                     android:textColor="@color/text_muted"
-                    android:textSize="11sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
 
         <!-- GET STARTED BUTTON -->
+        <!-- UI UPDATE: Added elevation for floating button feel -->
         <Button
             android:id="@+id/btn_get_started"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:backgroundTint="@color/primary_green"
+            android:elevation="4dp"
+            android:stateListAnimator="@null"
             android:text="Get started"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -247,12 +262,13 @@
             app:layout_constraintTop_toBottomOf="@id/ll_info_pill" />
 
         <!-- LOGIN BUTTON -->
+        <!-- UI UPDATE: Refined stroke width for crispness -->
         <Button
             android:id="@+id/btn_already_account"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="24dp"
             android:backgroundTint="@color/white"
             android:text="I already have an account"
@@ -263,7 +279,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_get_started"
-            app:strokeColor="@color/border_light" />
+            app:strokeColor="@color/border_light"
+            app:strokeWidth="1.5dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

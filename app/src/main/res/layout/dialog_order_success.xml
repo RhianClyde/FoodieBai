@@ -1,121 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- UI UPDATE v2: Enhanced confirmation dialog with floating receipt card layout and shadow elevation -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_rounded_card"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="28dp">
-
-    <!-- SUCCESS CHECK ICON -->
-    <FrameLayout
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:background="@drawable/bg_badge_green">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_nav_home"
-            app:tint="@color/primary_green" />
-    </FrameLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Order Confirmed!"
-        android:textColor="@color/text_dark"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:gravity="center"
-        android:text="Your meal is being prepared fresh.\nEstimated delivery time: 25 - 35 mins"
-        android:textColor="@color/text_secondary"
-        android:textSize="14sp" />
+    android:layout_margin="24dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_hero_card"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="28dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- SUCCESS CHECK ICON CONTAINER -->
+        <!-- UI UPDATE v2: Scooter badge icon in green circle container -->
+        <FrameLayout
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:background="@drawable/bg_badge_green"
+            android:elevation="3dp">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_scooter_pin" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="18dp"
+            android:text="Order Confirmed!"
+            android:textColor="@color/text_dark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Order Reference"
-                android:textColor="@color/text_muted"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tv_order_ref"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ORD-849302"
-                android:textColor="@color/primary_green_dark"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="Your meal is being prepared fresh.\nEstimated delivery time: 25 - 35 mins"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Total Amount"
-                android:textColor="@color/text_muted"
-                android:textSize="12sp" />
+        <!-- ORDER DETAILS RECEIPT CARD -->
+        <!-- UI UPDATE v2: Floating card wrapper for order reference and total -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_hero_card"
+            android:orientation="vertical"
+            android:padding="18dp">
 
-            <TextView
-                android:id="@+id/tv_order_amount"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="₱399"
-                android:textColor="@color/text_dark"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Order Reference"
+                    android:textColor="@color/text_muted"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_order_ref"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ORD-849302"
+                    android:textColor="@color/primary_green_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Amount"
+                    android:textColor="@color/text_muted"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_order_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₱399"
+                    android:textColor="@color/text_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
+
+        <!-- TRACK ORDER BUTTON -->
+        <!-- UI UPDATE v2: Floating action button -->
+        <Button
+            android:id="@+id/btn_track_order"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/primary_green"
+            android:elevation="4dp"
+            android:stateListAnimator="@null"
+            android:text="Track Order Status"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="27dp" />
+
+        <!-- BACK TO MENU BUTTON -->
+        <Button
+            android:id="@+id/btn_continue_shopping"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Back to Menu"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_track_order"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/primary_green"
-        android:text="Track Order Status"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="27dp" />
-
-    <Button
-        android:id="@+id/btn_continue_shopping"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:text="Back to Menu"
-        android:textColor="@color/text_secondary"
-        android:textSize="15sp" />
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

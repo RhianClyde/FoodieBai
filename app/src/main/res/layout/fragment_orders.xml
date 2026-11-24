@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- UI UPDATE v2: Orders fragment layout with refined typography and empty state styling -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_screen"
     android:orientation="vertical">
 
+    <!-- HEADER -->
+    <!-- UI UPDATE v2: Spacing and typography hierarchy -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="28dp"
         android:text="Your Orders"
         android:textColor="@color/text_dark"
         android:textSize="26sp"
@@ -18,19 +21,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="4dp"
         android:text="Track active and past meal orders"
         android:textColor="@color/text_secondary"
         android:textSize="14sp" />
 
+    <!-- EMPTY ORDERS STATE -->
+    <!-- UI UPDATE v2: Friendly empty state with emoji and line spacing -->
     <TextView
         android:id="@+id/tv_empty_orders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="No order history yet.\nPlace an order from your cart!"
+        android:lineSpacingExtra="5dp"
+        android:text="📦\n\nNo order history yet.\nPlace an order from your cart!"
         android:textColor="@color/text_muted"
         android:textSize="15sp"
         android:visibility="gone" />

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UI UPDATE v2: Soft orange status pill background -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/status_pending_bg" />
+    <corners android:radius="12dp" />
+</shape>

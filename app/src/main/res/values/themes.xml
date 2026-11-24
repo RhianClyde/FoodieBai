@@ -6,6 +6,9 @@
         <item name="android:windowBackground">@color/bg_screen</item>
         <item name="android:statusBarColor">@color/bg_screen</item>
         <item name="android:windowLightStatusBar">true</item>
+        <!-- UI UPDATE: Smooth over-scroll and better font rendering -->
+        <item name="android:overScrollMode">never</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="Theme.FoodOrderingSystem" parent="Base.Theme.FoodOrderingSystem" />

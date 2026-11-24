@@ -62,10 +62,16 @@ class SignUpActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.et_email)
         val tvEmailError = findViewById<TextView>(R.id.tv_email_error)
 
+        val llPassword = findViewById<LinearLayout>(R.id.ll_password)
         val etPassword = findViewById<EditText>(R.id.et_password)
         val btnTogglePassword = findViewById<View>(R.id.btn_toggle_password)
         val btnCreateAccount = findViewById<Button>(R.id.btn_create_account)
         val tvSignInLink = findViewById<TextView>(R.id.tv_sign_up_link)
+
+        // UI UPDATE v2: Password focus highlight listener
+        etPassword.setOnFocusChangeListener { _, hasFocus ->
+            llPassword.setBackgroundResource(if (hasFocus) R.drawable.bg_input_field_focused else R.drawable.bg_input_field)
+        }
 
         val linkText = "Already have an account? Sign in"
         val spannable = SpannableString(linkText)

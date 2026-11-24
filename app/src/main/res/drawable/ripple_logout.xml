@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UI UPDATE: Ripple for logout button -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#33D93838">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#D93838" />
+            <corners android:radius="27dp" />
+        </shape>
+    </item>
+</ripple>
